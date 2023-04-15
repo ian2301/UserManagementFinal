@@ -1,0 +1,95 @@
+Nation:  https://Nationalize.io?name=tony
+{
+    "country": [
+        {
+            "country_id": "NZ",
+            "probability": 0.059
+        },
+        {
+            "country_id": "AU",
+            "probability": 0.058
+        },
+        {
+            "country_id": "GB",
+            "probability": 0.05
+        },
+        {
+            "country_id": "LB",
+            "probability": 0.049
+        },
+        {
+            "country_id": "IE",
+            "probability": 0.048
+        }
+    ],
+    "name": "tony"
+}
+
+Age:  https://api.agify.io?name=tony
+{
+    "age": 59,
+    "count": 128604,
+    "name": "tony"
+}
+
+Gender:  https://Genderize.io?name=tony
+{
+    "count": 560984,
+    "gender": "male",
+    "name": "tony",
+    "probability": 1.0
+}
+
+controller /
+
+
+要求：
+#RI: /api/user-management/user
+#Method: POST
+#Sample request body:
+#1{
+# 2 "password":"",
+# 3 "firstName":"",
+# 4 "lastName":"",
+# 5 "email":"",
+# 6 "contactNumber":""
+# 7 "tags":["a","b"]
+# 8}
+#
+#Success response code: 201 Created
+#Response body empty.
+#
+#Handling logic:
+#Save the user into a table ?app_user? with following column:
+# 1 username: varchar
+# 2 password: varchar
+# 3 firstName: varchar
+# 4 lastName: varchar
+# 5 email: varchar
+# 6 contactNumber: varchar
+# 7 age: int
+# 8 gender: varchar: male/female
+# 9 nationality: varchar of ISO country code
+# 10 tags: varchar
+# 11 status: varchar of active/inactive/deleted
+# 12 created: varchar in ISO date format
+# 13 updated: varchar in ISO date format
+#
+#Request to DB mapping:
+#username: from request - email
+#password: from request - password
+#firstName: from request - firstName
+#lastName: from request - lastName
+#email: from request - email
+#contactNumber: from request - contactNumber
+#age: from Agify.io | Predict the age of a name by the first name
+#gender: varchar: from Genderize.io | Determine the gender of a name by the first name
+#nationality: from Nationalize.io | Predict the nationality of a name by the first name
+#tags: concat all tags from request , delimited by ?:?
+#status: active
+#created: varchar in ISO date format - current datetime in UTC
+#updated: varchar in ISO date format - current datetime in UTC
+
+
+
+

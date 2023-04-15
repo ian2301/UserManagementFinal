@@ -1,0 +1,44 @@
+Nation:  https://Nationalize.io?name=tony
+{
+    "country": [
+        {
+            "country_id": "NZ",
+            "probability": 0.059
+        },
+        {
+            "country_id": "AU",
+            "probability": 0.058
+        },
+        {
+            "country_id": "GB",
+            "probability": 0.05
+        },
+        {
+            "country_id": "LB",
+            "probability": 0.049
+        },
+        {
+            "country_id": "IE",
+            "probability": 0.048
+        }
+    ],
+    "name": "tony"
+}
+
+Age:  https://api.agify.io?name=tony
+{
+    "age": 59,
+    "count": 128604,
+    "name": "tony"
+}
+
+Gender:  https://Genderize.io?name=tony
+{
+    "count": 560984,
+    "gender": "male",
+    "name": "tony",
+    "probability": 1.0
+}
+
+
+
